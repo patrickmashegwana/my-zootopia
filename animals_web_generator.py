@@ -38,7 +38,7 @@ def print_animal_data(animals_data):
     return output
 
 if __name__ == "__main__":
-    animals_data = load_data("../test-zootopia/animals_data.json")
+    animals_data = load_data("animals_data.json")
     result = read_html_file()
     data = print_animal_data(animals_data)
 
