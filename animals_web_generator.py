@@ -20,20 +20,13 @@ def print_animal_data(animals_data):
     """Iterates through animals and prints selected info"""
     output = ""
     for animal in animals_data:
-
-        name = animal["name"]
-        diet = animal["characteristics"]["diet"]
-        locations = animal["locations"]
-        animal_type = animal.get("characteristics").get("type")
-
-        if name:
-            output += f"Name: {name}\n"
-        if diet:
-            output += f"Diet: {diet}\n"
-        if locations and len(locations) > 0:
-            output += f"Location: {locations[0]}\n"
-        if animal_type:
-            output += f"Type: {animal_type}\n"
+        output += '<li class="cards__item">'
+        output += f"Name: {animal['name']}<br/>\n"
+        output += f"Diet: {animal['characteristics']['diet']}<br/>\n"
+        output += f"Location: {animal['locations'][0]}<br/>\n"
+        if 'type' in animal['characteristics']:
+            output += f"Type: {animal['characteristics']['type']}<br/>\n"
+        output += '</li>'
 
     return output
 
